@@ -32,7 +32,7 @@ public class JmsProcessorConfig extends BaseJmsConfig {
     public String destinationName;
 
     @ConfigDef(
-        required = true,
+        required = false,
         type = ConfigDef.Type.STRING,
         label = "JMS ReplyTo Queue",
         description = "ReplyTo Queue name",

@@ -33,6 +33,7 @@ import dev.bigspark.lb.ibmmq.ErrorRecordHandler;
 import dev.bigspark.lb.ibmmq.RecordEL;
 import dev.bigspark.lib.ibmmq.config.JmsErrors;
 import dev.bigspark.lib.ibmmq.config.JmsGroups;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -108,7 +109,7 @@ public class JmsMessageProcessorImpl implements JmsMessageProcessor {
                 LOG.info(Utils.format(JmsErrors.JMS_06.getMessage(), ex.toString()), ex);
             }
         }
-        if (issues.isEmpty()) {
+        if (issues.isEmpty() && StringUtils.isNotBlank(jmsProcessorConfig.replyToQueue)) {
             try {
                 replyToDestination = session.createQueue(jmsProcessorConfig.replyToQueue);
             } catch (JMSException ex) {
@@ -184,8 +185,10 @@ public class JmsMessageProcessorImpl implements JmsMessageProcessor {
                 bytesMessage.writeBytes(payload);
                 message = bytesMessage;
             }
-            //force a reply to destination
-            message.setJMSReplyTo(replyToDestination);
+            //force a reply to destination if specified
+            if (StringUtils.isNotBlank(jmsProcessorConfig.replyToQueue)) {
+                message.setJMSReplyTo(replyToDestination);
+            }
 
             // Resolve
             ELVars elVars = context.createELVars();

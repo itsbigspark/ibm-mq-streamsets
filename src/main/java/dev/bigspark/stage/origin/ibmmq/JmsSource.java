@@ -99,7 +99,6 @@ public class JmsSource extends BaseSource implements OffsetCommitter {
                 } else {
                     connectionFactory = (JmsConnectionFactory) initialContext.lookup(jmsConfig.connectionFactory);
                 }
-                connectionFactory = (JmsConnectionFactory) initialContext.lookup(jmsConfig.connectionFactory);
             } catch (NamingException ex) {
                 LOG.info(Utils.format(JmsErrors.JMS_01.getMessage(), jmsConfig.initialContextFactory, ex.toString()), ex);
                 issues.add(getContext().createConfigIssue(JmsGroups.JMS.name(), "jmsConfig.initialContextFactory", JmsErrors.JMS_01,
