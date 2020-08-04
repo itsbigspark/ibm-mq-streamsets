@@ -16,7 +16,7 @@
 package dev.bigspark.stage.destination.ibmmq;
 
 import com.streamsets.pipeline.api.ConfigDef;
-import dev.bigspark.lb.ibmmq.RecordEL;
+import dev.bigspark.lib.ibmmq.RecordEL;
 import dev.bigspark.lib.ibmmq.config.BaseJmsConfig;
 
 public class JmsTargetConfig extends BaseJmsConfig {

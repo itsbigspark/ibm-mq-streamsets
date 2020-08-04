@@ -18,7 +18,7 @@ package dev.bigspark.stage.origin.ibmmq;
 import com.streamsets.pipeline.api.*;
 import com.streamsets.pipeline.api.impl.Utils;
 import com.streamsets.pipeline.api.service.dataformats.DataFormatParserService;
-import dev.bigspark.lb.ibmmq.ServicesUtil;
+import dev.bigspark.lib.ibmmq.ServicesUtil;
 import dev.bigspark.lib.ibmmq.config.JmsErrors;
 import dev.bigspark.lib.ibmmq.config.MessageConfig;
 

@@ -5,7 +5,7 @@ import com.streamsets.pipeline.api.ConfigDef.DisplayMode;
 import com.streamsets.pipeline.api.ConfigDef.Type;
 import com.streamsets.pipeline.api.Stage.ConfigIssue;
 import com.streamsets.pipeline.api.Stage.Context;
-import dev.bigspark.lb.ibmmq.BasicErrors;
+import dev.bigspark.lib.ibmmq.BasicErrors;
 
 import java.util.List;
 

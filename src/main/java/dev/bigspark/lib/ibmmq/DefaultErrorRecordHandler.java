@@ -1,4 +1,4 @@
-package dev.bigspark.lb.ibmmq;
+package dev.bigspark.lib.ibmmq;
 
 import com.streamsets.pipeline.api.*;
 import com.streamsets.pipeline.api.Stage.Context;

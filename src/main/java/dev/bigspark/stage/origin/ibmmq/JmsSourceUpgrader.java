@@ -20,7 +20,7 @@ import com.streamsets.pipeline.api.StageException;
 import com.streamsets.pipeline.api.StageUpgrader;
 import com.streamsets.pipeline.api.impl.Utils;
 import com.streamsets.pipeline.api.service.dataformats.DataFormatParserService;
-import dev.bigspark.lb.ibmmq.DataFormatUpgradeHelper;
+import dev.bigspark.lib.ibmmq.DataFormatUpgradeHelper;
 
 import java.util.ArrayList;
 import java.util.List;

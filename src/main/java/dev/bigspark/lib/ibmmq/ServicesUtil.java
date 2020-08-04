@@ -1,4 +1,4 @@
-package dev.bigspark.lb.ibmmq;
+package dev.bigspark.lib.ibmmq;
 
 import _ss_com.streamsets.pipeline.support.service.ServiceErrors;
 import com.streamsets.pipeline.api.Field;

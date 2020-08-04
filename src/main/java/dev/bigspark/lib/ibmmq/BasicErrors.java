@@ -1,15 +1,16 @@
-package dev.bigspark.lb.ibmmq;
+package dev.bigspark.lib.ibmmq;
 
 import com.streamsets.pipeline.api.ErrorCode;
 import com.streamsets.pipeline.api.GenerateResourceBundle;
 
 @GenerateResourceBundle
-public enum ServiceErrors implements ErrorCode {
-    SERVICE_ERROR_001("Cannot parse record from message '{}': {}");
+public enum BasicErrors implements ErrorCode {
+    BASIC_01("Batch size '{}' cannot be less than 1"),
+    BASIC_02("Batch wait time '{}' cannot be less than 1");
 
     private final String msg;
 
-    private ServiceErrors(String msg) {
+    private BasicErrors(String msg) {
         this.msg = msg;
     }
 
