@@ -198,6 +198,7 @@ public class JmsMessageProcessorImpl implements JmsMessageProcessor {
             // Finally sent the bits
             messageProducers.get(destinationName).send(message);
             record.getHeader().setAttribute("MessageId", message.getJMSMessageID());
+            record.get().setAttribute("OutgoingMessage", message.toString());
         } catch (JMSException e) {
             LOG.error("Could not produce message: {}", e);
             throw new StageException(JmsErrors.JMS_13, e.getMessage(), e);
