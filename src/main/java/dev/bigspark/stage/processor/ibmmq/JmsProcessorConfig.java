@@ -32,6 +32,17 @@ public class JmsProcessorConfig extends BaseJmsConfig {
     public String destinationName;
 
     @ConfigDef(
+        required = true,
+        type = ConfigDef.Type.BOOLEAN,
+        defaultValue = "false",
+        label = "Remove RFH2 Header",
+        description = "Sets target client on queue to suppress the RFH2 header",
+        displayPosition = 52,
+        group = "JMS"
+    )
+    public Boolean removeRFH2Header = false;
+
+    @ConfigDef(
         required = false,
         type = ConfigDef.Type.STRING,
         label = "JMS ReplyTo Queue",

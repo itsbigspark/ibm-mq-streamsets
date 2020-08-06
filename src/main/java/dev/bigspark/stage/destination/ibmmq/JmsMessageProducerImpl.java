@@ -129,7 +129,7 @@ public class JmsMessageProducerImpl implements JmsMessageProducer {
                                     destination = (Destination) initialContext.lookup(key);
                                     break;
                                 case QUEUE:
-                                    destination = session.createQueue(key);
+                                    destination = session.createQueue(key + (jmsTargetConfig.removeRFH2Header ? "?targetClient=1" : ""));
                                     break;
                                 case TOPIC:
                                     destination = session.createTopic(key);
