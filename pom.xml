@@ -24,7 +24,7 @@
   <version>1.0</version>
 
   <properties>
-    <streamsets.version>3.17.0</streamsets.version>
+    <streamsets.version>3.20.0</streamsets.version>
     <slf4j.version>1.7.7</slf4j.version>
     <junit.version>4.12</junit.version>
     <activemq.version>5.15.7</activemq.version>
